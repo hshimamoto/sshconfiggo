@@ -160,7 +160,8 @@ func main() {
 	n--
     }
 
-    sshconfig, err := os.OpenFile(Home + ".ssh/config", os.O_WRONLY|os.O_CREATE, 0600)
+    sshconfig, err := os.OpenFile(Home + ".ssh/config",
+	    os.O_WRONLY | os.O_CREATE | os.O_TRUNC, 0600)
     if err != nil {
 	log.Println("Open", err)
 	return
